@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- https://cdn.jsdelivr.net/gh/ -->
+    <!-- https://drive.google.com/uc?id= -->
+    <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAzP8AAAD//wD/AAAAAKX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREREREREAAAAAAAAAAABVUAMABEQCAFBVAwAABAIAUAUDAAAEAgBQBQMAAAQCAFVVAzMERAIAUAUDAAQAAgBQBQMABAACAFBVAwAEAAIAVVADMwREAgAAAAAAAAAAABEREREREREAAAAAAAAAAAAAAAAAAAAADAAwAAgAEAAP//AACNxQAApfUAALX1AAC19QAAhEUAALXdAAC13QAApd0AAIxFAAD//wAAgAEAAMADAADgBwAA" type="image/x-icon">
+    <title>EHA Smart Web BuriRam</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <style>*{font-family:"Sarabun",Sarabun;}</style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css" integrity="sha256-NWFDlc+2O5YBqGykjREpkSKDMB6yEu5qPecoRrhcsC0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" integrity="sha256-Yg7qJLDO4djMg5XIDylc8ue2+rliSTwmtJqNQrY6Tck=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/fontawesome.min.css" integrity="sha256-TBe0l9PhFaVR3DwHmA2jQbUf1y6yQ22RBgJKKkNkC50=" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/2.3.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" integrity="sha384-5hBbs6yhVjtqKk08rsxdk9xO80wJES15HnXHglWBQoj3cus3WT+qDJRpvs5rRP2c" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/buttons/3.2.3/css/buttons.bootstrap5.min.css" rel="stylesheet" integrity="sha384-DJhypeLg79qWALC844KORuTtaJcH45J+36wNgzj4d1Kv1vt2PtRuV2eVmdkVmf/U" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/responsive/3.0.4/css/responsive.bootstrap5.min.css" rel="stylesheet" integrity="sha384-seyUnB//1QOFEqox9uI7YTLBgz9jBwFRqZvsEPFrTw6NAsFEo70nhBWsQfODqiYA" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js" integrity="sha256-WjwoxFTbs4JzyDmrHgK4VgR+Dz7he8HYwCbocAlNn9k=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js" integrity="sha256-BAR0H3Qu2PCfoVr6CtZrcnbK3VKenmUF9C6IqgsNsNU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" integrity="sha384-VFQrHzqBh5qiJIU0uGU5CIW3+OWpdGGJM9LBnGbuIH2mkICcFZ7lPd/AAtI7SNf7" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.3.1/js/dataTables.min.js" integrity="sha384-LiV1KhVIIiAY/+IrQtQib29gCaonfR5MgtWzPCTBVtEVJ7uYd0u8jFmf4xka4WVy" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.3.1/js/dataTables.bootstrap5.min.js" integrity="sha384-G85lmdZCo2WkHaZ8U1ZceHekzKcg37sFrs4St2+u/r2UtfvSDQmQrkMsEx4Cgv/W" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.3/js/dataTables.buttons.min.js" integrity="sha384-zlMvVlfnPFKXDpBlp4qbwVDBLGTxbedBY2ZetEqwXrfWm+DHPvVJ1ZX7xQIBn4bU" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.3/js/buttons.bootstrap5.min.js" integrity="sha384-BdedgzbgcQH1hGtNWLD56fSa7LYUCzyRMuDzgr5+9etd1/W7eT0kHDrsADMmx60k" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.3/js/buttons.colVis.min.js" integrity="sha384-v0wzF6NECWiQyIain/Wacl6wEYr6NDJRus6qpckumPIngNI9Zo0sDMon5lBh9Np1" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.3/js/buttons.html5.min.js" integrity="sha384-+E6fb8f66UPOVDHKlEc1cfguF7DOTQQ70LNUnlbtywZiyoyQWqtrMjfTnWyBlN/Y" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.3/js/buttons.print.min.js" integrity="sha384-FvTRywo5HrkPlBKFrm2tT8aKxIcI/VU819roC/K/8UrVwrl4XsF3RKRKiCAKWNly" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.min.js" integrity="sha384-A6In5tKqlvPZKDpH+ei4A3A4TZrEsyvvN2Fe+oCB1IaQfGD5HNqDIxwjztNKSGDd" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.4/js/responsive.bootstrap5.js" integrity="sha384-hyp/YDWGBMFqg7pJuS+y+2VWJkwnOyX+oMN9fWcxINo2flqjC/SdNaHj8LIV4zKJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/50c02838bd45e31/js/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script> -->
+    
+    <link rel="stylesheet" href="./jquery.css">
+    <script src="./jquery.js"></script>
+    
+    <script>
+      $.LoadingOverlay("show")
+      var forms = document.querySelectorAll("form")
+      window.onload = () => {
+        $.LoadingOverlay("hide")
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].addEventListener("submit", event => {
+            event.preventDefault()
+          })
+        }
+      }
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+      * {padding: 0; margin: 0; box-sizing: border-box; font-family: Sarabun;}
+    </style>
+  </head>
+  <body>
+    <!-- style -->
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Sarabun&display=swap");
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: Sarabun;
+        }
+        body {
+          font-family: Sarabun;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background:url("")no-repeat;
+          background-size:cover;
+        }
+
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+        a{ /* color: blue; */ text-decoration: none; }
+        a:hover { /* color: red; */ text-decoration: none; }
+
+        table thead {
+          background: #33aab7;
+          color: white;
+          font-size: 16px;
+        }
+        table th, td {
+          white-space: nowrap;
+        }
+        .responsive {
+          max-width: 100%;
+          height: auto;
+        }
+        .responsive-iframe {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        :where(.container, form, .input-field, header) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .container {
+          padding: 30px;
+          border-radius: 12px;
+          row-gap: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container header {
+          height: 65px;
+          width: 65px;
+          color: #fff;
+          font-size: 2.5rem;
+          border-radius: 50%;
+          border: 4px solid #4070f4;
+        }
+        .container h4 {
+          font-size: 1.25rem;
+          color: #333;
+          font-weight: 500;
+        }
+        form .input-field {
+          flex-direction: row;
+          column-gap: 10px;
+        }
+        .input-field input {
+          height: 45px;
+          width: 42px;
+          border-radius: 6px;
+          outline: none;
+          font-size: 1.125rem;
+          text-align: center;
+          border: 1px solid #ddd;
+        }
+        .input-field input:focus {
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+        .input-field input::-webkit-inner-spin-button,
+        .input-field input::-webkit-outer-spin-button {
+          display: none;
+        }
+        form button {
+          margin-top: 25px;
+          width: 100%;
+          color: #fff;
+          font-size: 1rem;
+          border: none;
+          padding: 9px 0;
+          cursor: pointer;
+          border-radius: 6px;
+          pointer-events: none;
+          background: #6e93f7;
+          transition: all 0.2s ease;
+        }
+        form button.active {
+          background: #4070f4;
+          pointer-events: auto;
+        }
+        form button:hover {
+          background: #0e4bf1;
+        }
+        .login {
+            width: 360px;
+            height: min-content;
+            padding: 20px;
+            border-radius: 12px;
+            background: #ffffff;
+            border:1px solid #BFBFBF;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .login header{
+          height: 120px;
+          width: 120px;
+          color: #fff;
+          font-size: 2.5rem;
+          border-radius: 50%;
+          border: 4px solid #4070f4;
+        }
+        .login h1 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+        .login form {
+            font-size: 20px;
+        }
+        .login form .form-group {
+            margin-bottom: 12px;
+        }
+        .login form input[type="submit"] {
+            font-size: 20px;
+            margin-top: 5px;
+            width: 200px;
+        }
+        .form-class .form-label {
+          text-align: left;
+        }
+      </style>
+    <!-- style -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center">
+            <div class="card-header bg-success text-white p-3">
+              <i class="bx bx-database" style="color:#ffffff"></i>&nbsp; EHA SmartWeb User & Password BuriRam
+            </div>
+            <center>
+              <div class="card-body">
+                <form id="searchForm" class="form-inline">
+                  <div id="header" style="display: inline">
+                    <div class="mb-2">
+                      <label for="searchText">
+                        กรุณาพิมพ์ชื่อ อปท.
+                        <br>
+                        ที่ต้องการค้นหา
+                      </label>
+                    </div>
+                    <div class="mx-sm-3 mb-2">
+                      <input type="text" class="form-control" id="searchText" name="searchText" placeholder="พิมพ์ที่นี่">
+                      <input type="text" id="spreadsheetId" name="spreadsheetId" value="15PJ8tntKPxriSxFZxnYx2w6vHqUeLwnwCRgQvA1azO0" hidden>
+                      <input type="text" id="range" name="range" value="BuriRam!A2:F" hidden>
+                    </div>
+                    <div class="mx-sm-3 mb-2">
+                      <input class="btn btn-primary mb-2 rounded-pill" type="submit" value="ค้นหา">
+                    </div>
+                  </div>
+                  <div id="footer" style="display: none"><br/></div>
+                </form>
+              </div>
+            </center>
+            <div class="card-footer p-3">
+              <button class="btn btn-secondary mb-2 rounded-pill" type="button" id="loginBtn" value="ระบบประเมิน Environmental Health Accreditation (EHA SMART WEB)" onclick="window.open('https://ehasmart.anamai.moph.go.th/backend/backend/auth/signin', '_blank')">
+                ระบบประเมิน Environmental Health Accreditation (EHA SMART WEB)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- variables -->
+      <script>
+        var url = "https://script.google.com/macros/s/AKfycbw-ALRM77XeF5qU-fJ5IyqPnbV55vW4zJBbrnCTYEAbvNBnbo2E0onmWjVNNeWT16X87A/exec"
+        var header = document.getElementById("header")
+        var footer = document.getElementById("footer")
+        var text = document.getElementById("searchText")
+        var searchForm = document.forms["searchForm"]
+      </script>
+    <!-- variables -->
+
+    <!-- handleFormSubmit() -->
+      <script>
+        document.getElementById("searchForm").addEventListener("submit", async e => {
+          e.preventDefault()
+          $.LoadingOverlay("show")
+          header.style.display = "none"
+          footer.style.display = "inline"
+          if (!text.value) {
+            $.LoadingOverlay("hide")
+            Swal.fire({
+              timer: 60000,
+              timerProgressBar: true,
+              allowOutsideClick: false,
+              icon: 'error',
+              title: 'คำเตือน !!!',
+              html: '<b>กรุณาพิมพ์ชื่อ อปท. ที่ต้องการค้นหา</b><br /><br />',
+              confirmButtonText:'<i class="bx bx-sad" style="color:#ffffff"></i>&nbsp; ปิดหน้าต่าง',
+            })
+            header.style.display = "inline"
+            footer.style.display = "none"
+          } 
+          else {
+            try {
+              var response = await fetch(url, { 
+                method: "POST", 
+                body: new FormData(searchForm) 
+              })
+              var json = await response.json()
+              var dataArray = json.data
+              createTable(dataArray)
+            } 
+            catch (error) {
+              console.error(error.message)
+            }
+          }
+        })
+      </script>
+    <!-- handleFormSubmit() -->
+
+    <!-- createTable(dataArray) -->
+      <script>
+        function createTable(dataArray) {
+          $.LoadingOverlay("hide")
+          header.style.display = "inline"
+          if (dataArray && dataArray !== undefined && dataArray.length != 0) {
+            var result = "<table class='table table-sm table-striped table-hover' id='dtable'>"+
+                          "<thead style='white-space: nowrap'>"+
+                            "<tr>"+
+                              "<th scope='col'>ประเภท อปท.</th>"+
+                              "<th scope='col'>อำเภอ</th>"+
+                              "<th scope='col'>ชื่อ อปท.</th>"+
+                              "<th scope='col'>ชื่อเต็ม</th>"+
+                              "<th scope='col'>username</th>"+
+                              "<th scope='col'>password</th>"+
+                            "</tr>"+
+                          "</thead>"
+            for (var i = 0; i < dataArray.length; i++) {
+              result += "<tr>"
+              for (var j = 0; j < dataArray[i].length; j++) {
+                result += "<td class=\"table table-striped table-hover\">"+dataArray[i][j]+"</td>"
+              }
+              result += "</tr>"
+            }
+            result += "</table>"
+            Swal.fire({
+              width: 800,
+              timer: 60000,
+              timerProgressBar: true,
+              allowOutsideClick: false,
+              icon: 'success',
+              title: 'ผลการค้นหา',
+              html: 'พบข้อมูล : <b>'+text.value+'</b><br /><br />'+result+'',
+              confirmButtonText:'<i class="bx bx-smile" style="color:#ffffff"></i>&nbsp; ปิดหน้าต่าง',
+            })
+            $(document).ready(() => {
+              pdfMake.fonts = {
+                Roboto: {
+                  normal: "Roboto-Regular.ttf",
+                  bold: "Roboto-Medium.ttf",
+                  italics: "Roboto-Italic.ttf",
+                  bolditalics: "Roboto-MediumItalic.ttf"
+                }
+              }
+              $("#dtable").DataTable({
+                data: dataArray,                  
+                dom:"Bfrtip",
+                responsive:true,
+                searching:true,
+                language: {
+                  url: "https://cdn.datatables.net/plug-ins/1.10.24/i18n/Thai.json",
+                },
+                columns: [
+                  {"title":"ประเภท อปท."}, //0
+                  {"title":"อำเภอ"},       //1
+                  {"title":"ชื่อ อปท."},    //2
+                  {"title":"ชื่อเต็ม"},      //3
+                  {"title":"username"},   //4
+                  {"title":"password"},   //5
+                ],
+                // columnDefs: [
+                //   {
+                //   targets: [0,2],
+                //   visible: false,
+                //   }
+                // ]
+              })
+            })
+            footer.style.display = "none"
+            text.value = ""
+          } 
+          else {
+            Swal.fire({
+              timer: 60000,
+              timerProgressBar: true,
+              allowOutsideClick: false,
+              icon: 'error',
+              title: 'ผลการค้นหา',
+              html: 'ไม่พบข้อมูล : <b>'+text.value+'</b>',
+              confirmButtonText:'<i class="bx bx-sad" style="color:#ffffff"></i>&nbsp; ปิดหน้าต่าง',
+            })
+            footer.style.display = "none"
+            text.value = ""
+          }
+        }
+      </script>
+    <!-- createTable(dataArray) -->
+	</body>
+</html>
